@@ -3,6 +3,7 @@ package cz.spsmb.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "test-person-table")
@@ -10,15 +11,39 @@ public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id")
     long id;
     String name;
     int age;
 
-    public Person(){};
+    @OneToMany(mappedBy = "person")
+    List<Cat> cat;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "car_id", referencedColumnName = "id")
+    Car car;
+
+    public Person(){}
 
     public Person(String name, Integer age){
         this.name = name;
         this.age = age;
+    }
+
+    public List<Cat> getCat() {
+        return cat;
+    }
+
+    public void setCat(List<Cat> cat) {
+        this.cat = cat;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public long getId() {
