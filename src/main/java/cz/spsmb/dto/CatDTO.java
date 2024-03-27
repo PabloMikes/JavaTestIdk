@@ -1,11 +1,13 @@
 package cz.spsmb.dto;
 
+import cz.spsmb.model.Person;
+
 public class CatDTO {
 
     String name;
-    String age;
+    int age;
     String color;
-    String person;
+    Person person;
 
     public String getName() {
         return name;
@@ -15,11 +17,11 @@ public class CatDTO {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -31,11 +33,11 @@ public class CatDTO {
         this.color = color;
     }
 
-    public String getPerson() {
+    public Person getPerson() {
         return person;
     }
 
-    public void setPerson(String person) {
+    public void setPerson(Person person) {
         this.person = person;
     }
 

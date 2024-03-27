@@ -3,7 +3,7 @@ package cz.spsmb.dto;
 public class PersonDTO {
 
     String name;
-    String age;
+    int age;
     String car;
 
     public String getName() {
@@ -14,11 +14,11 @@ public class PersonDTO {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
